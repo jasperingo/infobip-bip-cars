@@ -1,3 +1,7 @@
-FROM payara/server-full
+FROM tomee:latest
 
-COPY myapplication.war $DEPLOY_DIR
+COPY ./target/bip-cars-1.0.war /usr/local/tomee/webapps/bip-cars-1.0.war
+
+CMD ["catalina.sh", "run"]
+
+EXPOSE 8080
